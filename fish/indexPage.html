@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" language="javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/underscore.js"></script>
+<script src="js/echarts.min.js"></script>
+
+
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/animatecss/animate.min.css">
+    <link rel="stylesheet" href="fonticon/iconfont.css">
+    <!-- <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-bss-web.css">
+    <link rel="stylesheet" href="template/default/portal/css/portal-bss-web.css">
+    <link rel="stylesheet" href="template/default/ppm/css/ppm-bss-web.css"> -->
+    <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-gs-bss.css">
+    <link rel="stylesheet" href="frm/fish-desktop/template/css/template.css">
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/icheck/icheck.css">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/html5shiv.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/respond.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="frm/dot.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-all.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/locale/fish-desktop-locale.zh.min.js"></script>
+	<script type="text/javascript" src="frm/fish-desktop/third-party/splitter/fish.splitter.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/icheck/fish.icheck.js"></script>
+    <!-- <script type="text/javascript" src="frm/fish-bss-ext.js"></script> -->
+    <script type="text/javascript" src="frm/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="frm/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="frm/xtable.js"></script>
+    <script type="text/javascript" src="frm/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="frm/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="frm/FileSaver.js"></script>
+    <script type="text/javascript" src="frm/ext/console-fix.js"></script>
+    <script type="text/javascript" src="frm/ext/tree-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/grid-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/label-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/fixedbox.js"></script>
+    <script type="text/javascript" src="frm/ext/pagination-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tooltip-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/popup-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tab-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/formlist.js"></script>
+    <script type="text/javascript" src="frm/ext/hypermultiselect.js"></script>
+    <script type="text/javascript" src="frm/ext/hypercombotree.js"></script>
+    <script type="text/javascript" src="frm/ext/alert-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/combobox-ext.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="public/common/pdfjs-dist/build/pdf.js"></script>
+    <script type="text/javascript" src="public/common/jSignature/jSignature.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-require.js" data-main="main"></script>
+
+
+<title></title>
+</head>
+<body>
+  
+	
+	<!--  start -->
+		
+	<div class="acct-container">
+    <div id="tab_bsn" class="ui-tabs">
+       
+       
+        <div class="ui-tabs-panel none-border" id="queryTab">
+            <div class="panel panel-default margin-vertical">
+				<div class="panel-heading clearfix">
+					<span class="panel-title pull-left padding-right-lg">
+						查询条件
+					</span>
+				</div>
+			
+                <div class="panel-body">
+                <form class="form-horizontal padding-top" id="operBatchBalQueryTab">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label col-xs-4">
+                                    区域:
+                                </label>
+                                <div class="col-xs-8">
+                                    <input class="form-control" id="queryStaffCode" name="queryStaffCode"  data-rule="required">
+                                </div>
+							</div>
+						</div>
+                        
+                        
+                        <div class="col-xs-4">
+                             <div class="form-group">
+                                <label class="control-label col-xs-4">
+                                    欺诈场景:
+                                </label>
+                                <div class="col-xs-8">
+                                    <input  type="text" class="form-control" id="queryStaffCode" name="queryStaffCode">
+                                </div>
+							</div>
+                        </div>
+						
+						 <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-4">
+                                        月份:
+                                    </label>
+                                    <div class="col-xs-4">
+                                        <input  type="text" class="form-control" id="monthNum" name="monthNum">
+                                    </div>
+                                </div>
+                            </div>
+					
+                 
+                    </div>
+					
+					<div class="row">
+						<div class="col-xs-9">
+							
+							<div class="row">
+						<div class="col-xs-6">
+							
+                            <div class="form-group">
+                                <label class="control-label col-xs-3">
+                                    确认状态:
+                                </label>
+                                <div class="col-xs-2">
+                                    <input type="checkbox" id="queryStaffCode" name="queryStaffCode1">
+									未确认
+								</div>
+								<div class="col-xs-2">
+									<input type="checkbox" id="queryStaffCode" name="queryStaffCode2">
+									确认欺诈
+								</div>
+								<div class="col-xs-2">
+									<input type="checkbox" id="queryStaffCode" name="queryStaffCode3">
+									确认正常
+								</div>
+                            </div>
+						</div>
+						</div>
+						</div>
+						
+					<div class="col-xs-3">
+                            <div class="form-group">
+                                <div class="col-xs-9 col-xs-offset-3">
+                                    <button type="button" class="btn btn-primary" id="btn_incomeQuery">
+                                        <span class="glyphicon glyphicon-search padding-right-sm"></span>
+    								查 询
+                                    </button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+					
+					
+					</div>
+					
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <div class="panel panel-default" id="panel1">
+        
+		
+    </div>
+   
+   
+    </div>
+</div>
+	
+
+	
+	<!-- end -->
+	
+	
+</body>
+
+
+</html>

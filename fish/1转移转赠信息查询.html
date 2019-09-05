@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" language="javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/underscore.js"></script>
+
+
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/animatecss/animate.min.css">
+    <link rel="stylesheet" href="fonticon/iconfont.css">
+    <!-- <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-bss-web.css">
+    <link rel="stylesheet" href="template/default/portal/css/portal-bss-web.css">
+    <link rel="stylesheet" href="template/default/ppm/css/ppm-bss-web.css"> -->
+    <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-gs-bss.css">
+    <link rel="stylesheet" href="frm/fish-desktop/template/css/template.css">
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/icheck/icheck.css">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/html5shiv.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/respond.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="frm/dot.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-all.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/locale/fish-desktop-locale.zh.min.js"></script>
+	<script type="text/javascript" src="frm/fish-desktop/third-party/splitter/fish.splitter.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/icheck/fish.icheck.js"></script>
+    <!-- <script type="text/javascript" src="frm/fish-bss-ext.js"></script> -->
+    <script type="text/javascript" src="frm/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="frm/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="frm/xtable.js"></script>
+    <script type="text/javascript" src="frm/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="frm/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="frm/FileSaver.js"></script>
+    <script type="text/javascript" src="frm/ext/console-fix.js"></script>
+    <script type="text/javascript" src="frm/ext/tree-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/grid-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/label-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/fixedbox.js"></script>
+    <script type="text/javascript" src="frm/ext/pagination-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tooltip-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/popup-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tab-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/formlist.js"></script>
+    <script type="text/javascript" src="frm/ext/hypermultiselect.js"></script>
+    <script type="text/javascript" src="frm/ext/hypercombotree.js"></script>
+    <script type="text/javascript" src="frm/ext/alert-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/combobox-ext.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="public/common/pdfjs-dist/build/pdf.js"></script>
+    <script type="text/javascript" src="public/common/jSignature/jSignature.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-require.js" data-main="main"></script>
+
+
+<title></title>
+</head>
+<body>
+    <!--  start和end之间替换对应的静态页面 -->
+	<!--  start -->
+	
+	<div class="acct-container">
+    <div id="tab_bsn" class="ui-tabs">
+       
+       
+        <div class="ui-tabs-panel none-border" id="queryTab">
+            <div class="panel panel-default margin-vertical">
+                <div class="panel-body">
+                <form class="form-horizontal padding-top" id="operBatchBalQueryTab">
+                    <div class="row">
+                        
+                        
+                        
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label class="control-label col-xs-3">
+                                    查询时间:
+                                </label>
+                                <div class="col-xs-9">
+                                    <div class="media-body">
+                                        <div class="input-group">
+                                            <input class="form-control" id="startDate" name="startDate" placeholder="开始时间" data-rule="开始日期:match[lte,endDate,datetime];">
+                                        </div>
+                                    </div>
+                                    <label class="input-group-addon" style="border:0">~</label>
+                                    <div class="media-body">
+                                        <div class="input-group">
+                                            <input class="form-control" id="endDate" name="endDate"  placeholder="结束时间" data-rule="开始日期:match[gte,startDate,datetime];">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						
+						<div class="col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label col-xs-4">
+                                    电话号码:
+                                </label>
+                                <div class="col-xs-8">
+                                    <input class="form-control" id="queryStaffCode" name="queryStaffCode">
+                                </div>
+							
+							
+                        </div>
+                    </div>
+					
+					<div class="col-xs-3">
+                            <div class="form-group">
+                                <div class="col-xs-9 col-xs-offset-3">
+                                    <button type="button" class="btn btn-primary" id="btn_incomeQuery">
+                                        <span class="glyphicon glyphicon-search padding-right-sm"></span>
+    								查 询
+                                    </button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+					
+                 
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <div class="panel panel-default" id="panel1">
+        <div class="panel-heading clearfix">
+            <span class="panel-title pull-left padding-right-lg">
+                转移转赠信息
+            </span>
+        </div>
+        <div class="panel-body acct-pad-0 acct-relativedom">
+            <div id="configsBillList" class="none-border acct-mt--1"></div>
+        </div>
+    </div>
+   
+   
+    </div>
+</div>
+	
+	<!-- end -->
+	
+	
+</body>
+<script>
+    $(function(){
+        var data=[{name:'carl'},{name:'carl'},{name:'carl'}];
+        var t=_.template($("#tpl").text());
+        $("#container").html(t(data));
+		//fish.info("123");
+		
+		//初始化组件
+		init();
+    });
+	
+	function init(){
+		initGrid();
+		init_datetimepicker();
+	}
+	
+	
+	function init_datetimepicker(){
+		//初始化起始时间和结束时间
+                var currMonthFirstDay = new Date();
+				currMonthFirstDay.setHours(0);// 把时间设置为当天的零时
+                currMonthFirstDay.setMinutes(0);// 把时间设置为当天的零时
+                currMonthFirstDay.setSeconds(0);// 把时间设置为当天的零时
+
+                var todayDate = new Date();
+                todayDate.setHours(23);
+                todayDate.setMinutes(59);
+                todayDate.setSeconds(59);
+
+				fish.info(todayDate);
+                $("#startDate").datetimepicker({
+                    initialDate: currMonthFirstDay,
+                    changeDate: function (e) {
+                        if(e.handleObj){
+                            me.$("#agentBalStatQryCon").isValid();
+                        }
+                    }
+                });
+                $("#endDate").datetimepicker({
+                    initialDate: todayDate,
+                    changeDate: function (e) {
+                        if(e.handleObj){
+                            me.$("#agentBalStatQryCon").isValid();
+                        }
+                    }
+                });
+	}
+	
+	function initGrid(){
+		$("#configsBillList").grid({
+                    height: 450,
+                    colModel: [
+                        {label: '源号码', name: 'sourceAccNbr', sortable: false},
+                        {label: '目的号码', name: 'desAccNbr'},
+                        {label: '转出名称', name: 'outName'},
+                        {label: '转出数量', name: 'outNum'},
+                        {label: '转入名称', name: 'inName'},
+                        {label: '转入数量', name: 'inNum'},
+                        {label: '更新时间', name: 'stateDate'}
+                    ], pageData: function (pageNo) {
+                        me.gotoLog(pageNo);
+                    },
+                    pager: true,
+                    rowNum: 20,
+                    rowList: [20, 30, 50],
+                    shrinkToFit: true,
+                    jsonReader: {root: "rows", page: "page", total: 'total', records: 'records'}
+                });
+				var abbUserBillDtoArr = '[{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776225969","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":0,"excGuorenSmsFeeStr":"0.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":35000,"elseFeeStr":"3.5","paidFee":2325000,"paidFeeStr":"232.5","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776225986","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":0,"excGuorenSmsFeeStr":"0.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":33000,"elseFeeStr":"3.3","paidFee":2323000,"paidFeeStr":"232.3","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776225963","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":900000,"excGuorenFlowFeeStr":"90.0","excGuorenSmsFee":0,"excGuorenSmsFeeStr":"0.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":30000,"elseFeeStr":"3.0","paidFee":3220000,"paidFeeStr":"322.0","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776268521","offerType":"P3+（加强套餐2）","offerName":"政企团购优惠201407 8折-促销","rentFeeAmount":2632000,"rentFeeAmountStr":"263.2","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":658000,"excGuorenVoiceFeeStr":"65.8","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":0,"excGuorenSmsFeeStr":"0.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":0,"elseFeeStr":"0.0","paidFee":3290000,"paidFeeStr":"329.0","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"18977771900","offerType":"P3（加强套餐1）","offerName":"乐享4G299-209-政企ABB专享","rentFeeAmount":2090000,"rentFeeAmountStr":"209.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":472100,"excGuorenFlowFeeStr":"47.21","excGuorenSmsFee":17000,"excGuorenSmsFeeStr":"1.7","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":0,"elseFeeStr":"0.0","paidFee":2579100,"paidFeeStr":"257.91","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"18172334779","offerType":"P3（加强套餐1）","offerName":"乐享4G299-209-政企ABB专享","rentFeeAmount":2090000,"rentFeeAmountStr":"209.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":20000,"excGuorenSmsFeeStr":"2.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":0,"elseFeeStr":"0.0","paidFee":2110000,"paidFeeStr":"211.0","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776268736","offerType":"P3（加强套餐1）","offerName":"乐享4G299-209-政企ABB专享","rentFeeAmount":2090000,"rentFeeAmountStr":"209.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":1500000,"excGuorenFlowFeeStr":"150.0","excGuorenSmsFee":26000,"excGuorenSmsFeeStr":"2.6","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":0,"elseFeeStr":"0.0","paidFee":3616000,"paidFeeStr":"361.6","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776225982","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":1000,"excGuorenSmsFeeStr":"0.1","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":0,"elseFeeStr":"0.0","paidFee":2291000,"paidFeeStr":"229.1","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"13397777163","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":0,"excGuorenSmsFeeStr":"0.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":30000,"elseFeeStr":"3.0","paidFee":2320000,"paidFeeStr":"232.0","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776225981","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":0,"excGuorenSmsFeeStr":"0.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":31000,"elseFeeStr":"3.1","paidFee":2321000,"paidFeeStr":"232.1","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776225985","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":0,"excGuorenSmsFeeStr":"0.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":30000,"elseFeeStr":"3.0","paidFee":2320000,"paidFeeStr":"232.0","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"18077771286","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":0,"excGuorenSmsFeeStr":"0.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":30000,"elseFeeStr":"3.0","paidFee":2320000,"paidFeeStr":"232.0","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776225980","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":16000,"excGuorenSmsFeeStr":"1.6","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":171000,"elseFeeStr":"17.1","paidFee":2477000,"paidFeeStr":"247.7","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776225992","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":79000,"excGuorenSmsFeeStr":"7.9","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":1001000,"elseFeeStr":"100.1","paidFee":3370000,"paidFeeStr":"337.0","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776268523","offerType":"P3+（加强套餐2）","offerName":"政企团购优惠201407 8折-促销","rentFeeAmount":2392000,"rentFeeAmountStr":"239.2","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":0,"excGuorenSmsFeeStr":"0.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":0,"elseFeeStr":"0.0","paidFee":2392000,"paidFeeStr":"239.2","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776225983","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":0,"excGuorenSmsFeeStr":"0.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":90000,"elseFeeStr":"9.0","paidFee":2380000,"paidFeeStr":"238.0","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"18174746852","offerType":"P3+（加强套餐2）","offerName":"政企团购优惠201407 8折-促销","rentFeeAmount":2632000,"rentFeeAmountStr":"263.2","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":598000,"excGuorenVoiceFeeStr":"59.8","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":30000,"excGuorenSmsFeeStr":"3.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":30000,"elseFeeStr":"3.0","paidFee":3290000,"paidFeeStr":"329.0","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776225989","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":0,"excGuorenSmsFeeStr":"0.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":30000,"elseFeeStr":"3.0","paidFee":2320000,"paidFeeStr":"232.0","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776225962","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":0,"excGuorenFlowFeeStr":"0.0","excGuorenSmsFee":0,"excGuorenSmsFeeStr":"0.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":30000,"elseFeeStr":"3.0","paidFee":2320000,"paidFeeStr":"232.0","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803},{"userName":"ABB(中国)有限公司南宁分公司","accNbr":"17776268625","offerType":"P3（加强套餐1）","offerName":"乐享4G299-229-政企ABB专享","rentFeeAmount":2290000,"rentFeeAmountStr":"229.0","cardComDate":"N/A","effDate":"N/A","offerVoice":"N/A","offerFlow":"N/A","offerSms":"N/A","guorenUsedVoice":"N/A","guorenUsedFlow":"N/A","guorenUsedSms":"N/A","excOffGuorenVoice":"N/A","excOffGuorenFlow":"N/A","excOffGuorenSms":"N/A","excGuorenVoiceFee":0,"excGuorenVoiceFeeStr":"0.0","excGuorenFlowFee":1500000,"excGuorenFlowFeeStr":"150.0","excGuorenSmsFee":0,"excGuorenSmsFeeStr":"0.0","guojiUsedVoice":"N/A","guojiVoiceFee":"0","guojiFlow":"N/A","guojiFlowFee":0,"guojiFlowFeeStr":"0.0","guojiSms":"N/A","guojiSmsFee":"0","longGuojiVoice":"N/A","longGuojiVoiceFee":0,"longGuojiVoiceFeeStr":"0.0","longGuojiSms":"N/A","longGuojiSmsFee":"N/A","wifiUsedFlow":"N/A","wifiUsedFlowFee":"N/A","mulSms":"N/A","mulSmsFee":"N/A","elseFee":30000,"elseFeeStr":"3.0","paidFee":3820000,"paidFeeStr":"382.0","espeDesc":-9999999999999998,"espeDescStr":"","tjMonth":201803}]';
+				var jsonObj = JSON.parse(abbUserBillDtoArr);
+				
+				for(var i =0;i< jsonObj.length;i ++){
+					jsonObj[i].opt = '\<a class=\"btn-js-update\">修改\<\/a\>\|\<a class="btn-js-del"\>删除\<\/a\>';
+				}
+				debugger;
+				$("#configsBillList").grid("reloadData",jsonObj );
+				
+	}
+	
+	function getCurrentMonthFirst() {
+			//TODO 获取当前月的第一天
+			var date = new Date();
+			date.setDate(1);
+			return date.format("yyyy-MM-dd");
+		}
+	
+	
+</script>
+<script type="text/template" id="tpl">
+    <%_.each(obj,function(e,i){%>
+    <ul>
+        <li><%=e.name%></li>
+    </ul>
+    <%})%>
+	
+	
+	
+</script>
+</html>

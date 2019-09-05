@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" language="javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/underscore.js"></script>
+
+
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/animatecss/animate.min.css">
+    <link rel="stylesheet" href="fonticon/iconfont.css">
+    <!-- <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-bss-web.css">
+    <link rel="stylesheet" href="template/default/portal/css/portal-bss-web.css">
+    <link rel="stylesheet" href="template/default/ppm/css/ppm-bss-web.css"> -->
+    <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-gs-bss.css">
+    <link rel="stylesheet" href="frm/fish-desktop/template/css/template.css">
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/icheck/icheck.css">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/html5shiv.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/respond.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="frm/dot.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-all.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/locale/fish-desktop-locale.zh.min.js"></script>
+	<script type="text/javascript" src="frm/fish-desktop/third-party/splitter/fish.splitter.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/icheck/fish.icheck.js"></script>
+    <!-- <script type="text/javascript" src="frm/fish-bss-ext.js"></script> -->
+    <script type="text/javascript" src="frm/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="frm/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="frm/xtable.js"></script>
+    <script type="text/javascript" src="frm/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="frm/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="frm/FileSaver.js"></script>
+    <script type="text/javascript" src="frm/ext/console-fix.js"></script>
+    <script type="text/javascript" src="frm/ext/tree-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/grid-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/label-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/fixedbox.js"></script>
+    <script type="text/javascript" src="frm/ext/pagination-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tooltip-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/popup-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tab-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/formlist.js"></script>
+    <script type="text/javascript" src="frm/ext/hypermultiselect.js"></script>
+    <script type="text/javascript" src="frm/ext/hypercombotree.js"></script>
+    <script type="text/javascript" src="frm/ext/alert-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/combobox-ext.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="public/common/pdfjs-dist/build/pdf.js"></script>
+    <script type="text/javascript" src="public/common/jSignature/jSignature.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-require.js" data-main="main"></script>
+
+	<script type="text/javascript" src="./consts/CommonStaticData.js"></script>
+	
+
+<title></title>
+</head>
+<body>
+	<img src="img/zhuzhu001.png" />
+	
+	
+	<!--  start -->
+	
+	 <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <span class="panel-title pull-left padding-right-lg">
+                帐户群历史记录
+            </span>
+	
+	<form class="form-horizontal padding-top">
+	
+	<div class="container" style="width:60%;">
+		<div class="row">
+		<div class="col-xs-4">
+			<div class="form-group">
+				<label class="control-label col-xs-4">
+					操作人工号:
+				</label>
+				<div class="col-xs-8">
+					<input class="form-control" placeholder="">
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="form-group">
+				<label class="control-label col-xs-4">
+					帐户群名:
+				</label>
+				<div class="col-xs-8">
+					<input class="form-control" placeholder="">
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="form-group">
+				<div class="col-xs-offset-4 col-xs-8">
+					<button type="button" class="btn btn-primary">
+						<span class="glyphicon glyphicon-search padding-right-sm">
+						</span>
+						查询
+					</button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	
+</form>
+</div>
+			</div>
+<div id="grid_acctGroup" class="">
+	
+</div>
+
+ <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <span class="panel-title pull-left padding-right-lg">
+                帐户群成员历史记录
+            </span>
+<form class="form-horizontal padding-top">
+<div class="container" style="width:60%;">
+		<div class="row">
+		<div class="col-xs-4">
+			<div class="form-group">
+				<label class="control-label col-xs-4">
+					操作人工号:
+				</label>
+				<div class="col-xs-8">
+					<input class="form-control" placeholder="">
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="form-group">
+				<label class="control-label col-xs-4">
+					帐户群名:
+				</label>
+				<div class="col-xs-8">
+					<input class="form-control" placeholder="">
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="form-group">
+				<div class="col-xs-offset-4 col-xs-8">
+					<button type="button" class="btn btn-primary">
+						<span class="glyphicon glyphicon-search padding-right-sm">
+						</span>
+						查询
+					</button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</form>
+</div>
+			</div>
+<table class="table table-striped" id="xtab"></table>
+	<table class="table table-striped" id="customer-center-sales-table"></table>
+	<!-- end -->
+	
+	
+</body>
+<script>
+    $(function(){
+        var data=[{name:'carl'},{name:'carl'},{name:'carl'}];
+        var t=_.template($("#tpl").text());
+        $("#container").html(t(data));
+
+		//初始化组件
+		init();
+    });
+	
+	function init(){
+		initGrid();
+	}
+	
+	function initGrid(){
+	
+		$("#xtab").xtable("loadData",[]);
+		var option = {
+				columns : [
+					{data : "operDate",title:"缴费时间"},
+					{data : "accNbr",title:"号码	"},
+					{data : "operAmount",title:"缴费金额	"},
+					{data : "operState",title:"缴费方式"},
+				],
+				rowId:"",
+				url : ""
+			};
+			/*
+			$("#user-package-table").xtable({
+                columns: [
+                    {data: 'prod_offer_id',title: "套餐ID",width: 120},
+                    {data: 'prod_offer_name',title: "套餐名称",width: 300},
+                    {data: 'status_cd_name',title: "套餐状态",width: 80},
+                    {data: 'eff_date_str',title: "生效时间",width: 80},
+                    {data: 'exp_date_str',title: "失效日期",width: 80},
+                    {data: 'oper',title: "操作",width: 60}
+                ],
+                autoFill:false,
+                pageSize : 9999,
+                pagination : false,
+                onSelect : function(e,data,selected){}
+            });
+			
+			*/
+			
+			$("#xtab").xtable(option);
+			
+			
+			var data = {"logData":
+			[{"operDate":"2018-06-08 10:10:02","operAmount":"10.0","staffCode":"316666","operState":"00A","paymentId":"0","partyName":"临夏接口工号专用组织","accNbr":"18919818283","remark":"小前台预存款","invoiceAmount":"10.0","operType":"存","recId":"480821086966","operBalance":"104.2"},
+			{"operDate":"2018-06-11 14:32:26","operAmount":"1.0","staffCode":"316666","operState":"00A","paymentId":"0","partyName":"临夏接口工号专用组织","accNbr":"18919818283","remark":"小前台预存款","invoiceAmount":"1.0","operType":"存","recId":"480846982234","operBalance":"105.2"},
+			{"operDate":"2018-06-11 15:05:49","operAmount":"1.0","staffCode":"316666","operState":"00A","paymentId":"0","partyName":"临夏接口工号专用组织","accNbr":"18919818283","remark":"小前台预存款","invoiceAmount":"1.0","operType":"存","recId":"480850076108","operBalance":"106.2"},
+			{"operDate":"2018-06-11 15:07:10","operAmount":"1.0","staffCode":"316666","operState":"00A","paymentId":"0","partyName":"临夏接口工号专用组织","accNbr":"18919818283","remark":"小前台预存款","invoiceAmount":"1.0","operType":"存","recId":"480851696022","operBalance":"107.2"}],
+			"retCode":"SUCCESS","retMsg":"CRM查询数据成功!"};
+			
+			$("#xtab").xtable("loadData",data.logData);
+			initSalesTable();
+			loadSalesInfo(1);
+		
+				
+	}
+	
+	function initSalesTable () {
+            var that = this;
+            that.$sales = that.$("#customer-center-sales-table").xtable({
+                columns: [
+                    {data: 'prod_offer_inst_id',title: "",width: 150,visible:false},
+                    {data: 'key',title: "",width: 150,visible:false},
+                    {data: 'buttion',title: "",width: 30,formatter:function(data){
+                        return '<div class="row-btn on glyphicon glyphicon-plus" data-key='+data+'></div>';
+                    }},
+                    {data: 'prod_offer_name',title: "套餐名称/接入号码",width: 200},
+                    {data: 'status_cd_name',title: "状态",width: 50},
+                    {data: 'role_name',title: "角色",width: 100},
+                    {data: 'prod_inst_id',title: "账户",width: 100},
+                    {data: 'create_date_str',title: "创建时间",width: 100},
+                    {data: 'eff_date_str',title: "生效时间",width: 100},
+                    {data: 'exp_date_str',title: "失效时间",width: 100},
+                    {data: 'oper',title: "操作",width: 120,formatter:function(data,rows){
+                        return '<a class="js-change">变更</a> | <a class="js-detail">详细</a>';
+                    }}
+                ],
+                autoFill:false,
+                pageSize : 10,
+                pagination : false
+            });
+            that.$("#customer-center-sales-table").on("click",".row-btn",function(data){
+                var $target = $(this);
+                var rowdata = that.$sales.xtable("findData",$target.parents("tr"));
+                var key = rowdata.key;
+                that.$("."+key).toggle();//切换子表格显示和影藏
+                that._toggleClass($(this));
+            });
+            that.$sales.on("click",".js-change",function(event){//点击变更
+                var $target = $(this);
+                var rowdata = that.$sales.xtable("findData",$target.parents("tr"));
+                var key = rowdata.key;
+
+                var datas = Action.StaticData.datas;
+                var data = _.find(datas,function(item){
+                    return item.key = key;
+                });
+
+                var offerProdInstRel = data.offer_prod_inst_rel;
+                for (var i=0; i < offerProdInstRel.length; i++) {
+                    if (offerProdInstRel[i].product_name != "移动电话") {
+                        fish.info('暂不支持套餐变更！');
+                        return;
+                    }
+                }
+                that.salesChange(data);
+            });
+	
+	}
+	function loadSalesInfo(params) {
+            var that = this;
+           // Action.querySalesInfo(params, function (data) {
+             //   if(Action.validateRetData(data)){
+			var data = {"retData":[{"prod_offer_inst":{"main_flag":"1","eff_date":"2017-05-25 11:32:21","prod_offer_name":"乐享4G201407 129元-主套餐","status_cd":"1000","prod_offer_id":"30038000","is_del":"F","offer_kind":"11","exp_date":"2030-01-01 00:00:00","prod_offer_inst_id":"300000037251","prod_offer_desc":"(禁止本省crm开放)套餐费129元，国内流量1GB，国内通话500分钟。资费说明： 1.免费接听范围：国内，赠送来电显示和189邮箱。 2.套餐超出收费：国内流量：不足100MB部分，按0.3元/MB收费，100MB-500MB免费；用户套餐外流量超过500MB时，仍按上述原则（即每超出500MB收费30元）收费，以此类推；（2）国内通话：0.15元/分钟；（3）国内短/彩信：0.1元/条。 省内可自行上/下架","create_date":"2017-05-25 11:30:21"},"offer_prod_inst_rel":[{"role_name":"天翼手机-主卡","eff_date":"2017-05-25 11:32:21","account_id":"931201034289","account_name":"冯晓娟","exp_date":"2030-01-01 00:00:00","acc_nbr":"17709311908","create_date":"2017-05-25 11:30:22","prod_comp_role_cd":"400253","prod_inst_id":"300000037219","product_name":"移动电话","state_cd":"已竣工"}]},{"prod_offer_inst":{"main_flag":"1","eff_date":"2017-05-24 18:20:14","prod_offer_name":"天翼云盘企业版29元/月","status_cd":"1000","prod_offer_id":"30124441","is_del":"F","offer_kind":"11","exp_date":"2030-01-01 00:00:00","prod_offer_inst_id":"300000036977","prod_offer_desc":"(禁止本省crm开放)资费内容月基本费29元/月，包含云存储空间200GB，允许10个用户使用。二、 业务规则 1.天翼云盘企业版与“家庭版（家庭云）、个人版”为相互独立产品，同一客户可同时订购三个产品。 2．同一产品每个客户限申请一档，不能重复订购。 3．订购立即生效、订购当月功能费按日计扣（入网当日到月底），费用四舍五入到分，存储空间和用户数全额享受。","create_date":"2017-05-24 18:28:57"},"offer_prod_inst_rel":[{"role_name":"基本成员","eff_date":"2017-05-24 18:20:14","account_id":"931201034285","account_name":"冯晓娟","exp_date":"2030-01-01 00:00:00","acc_nbr":"YP620100000300","create_date":"2017-05-24 18:28:57","prod_comp_role_cd":"421653","prod_inst_id":"300000036976","product_name":"天翼云盘(企业版)","state_cd":"已竣工"}]}],"retCode":"SUCCESS","retMsg":"CRM查询数据成功!","appData":[{"menu_icon_small":"row-take-ico.png","category_name":"订购业务","app_type":"","category_code":"category_install","menu_name":"可选包订购","menu_url":"/tab/package-order","menu_icon_big":"row-take-ico.png","menu_code":"package-order","is_check":"F","type":"F","seq":"16"},{"menu_icon_small":"one-package-small-ico.png","category_name":"订购业务","app_type":"","category_code":"category_install","menu_name":"一键换套餐","menu_url":"/tab/one-change-package-one","menu_icon_big":"one-package-small-ico.png","menu_code":"one-change-package-one","is_check":"F","type":"F","seq":"50"}]};
+			//转换数据格式
+			_.each(data.retData,function(data){
+				convertSalesData(data.prod_offer_inst);
+				_.each(data.offer_prod_inst_rel,function(data2){
+					convertSalesData(data2);
+				});
+			});
+			var dataarr = _.map(data.retData,function(item,index){
+				var key = "sales_" + index;
+				item.key = key;
+				item.prod_offer_inst.key = key;
+				return item.prod_offer_inst;
+			});
+
+			//Action.StaticData.datas = data.retData;//要和跳转页面沟通确定要传的参数
+			that.$("#customer-center-sales-table").xtable("loadData",dataarr);
+			that.$("#customer-center-sales-table").find("tr").each(function(index){
+				if (index != 0) {//首行是表头
+					var itemdata = data.retData[index-1];
+					if (itemdata && _.isArray(itemdata.offer_prod_inst_rel)) {
+					    var htmltemp = "";
+						/**
+						{{~ it.offer_prod_inst_rel:value:index}}
+<tr class='{{= it.key}}'>
+	<td></td>
+    <td>{{= value.acc_nbr || '' }}</td>
+    <td>{{= value.state_cd || '' }}</td>
+    <td>{{= value.role_name || '' }}</td>
+    <td>{{= value.prod_inst_id || '' }}</td>
+    <td>{{= value.create_date_str || '' }}</td>
+    <td>{{= value.eff_date_str || '' }}</td>
+    <td>{{= value.exp_date_str || '' }}</td>
+    <td>详情</td>
+</tr>
+{{~}}
+
+*/
+					htmltemp = "<tr class='ddd'>  "
+	+ "<td></td>  "
+    + "<td>11</td>  "
+    + "<td>22</td>  "
+    + "<td>33</td>  "
+    + "<td>44</td>  "
+    + "<td>55</td>  "
+    + "<td>66</td>  "
+    + "<td>77</td>  "
+    + "<td>详情</td>  "
++ "</tr>";
+htmltemp = htmltemp + htmltemp + htmltemp + htmltemp;
+
+
+							
+								$(this).after(htmltemp);
+					
+						//$(this).after(SalesSubtable(itemdata));
+						that.$("."+itemdata.key).hide();
+					}
+				}
+			});
+               
+        }
+		
+		var Offer_Type = {
+		    		"1100": "失效",
+		            "1000": "正常"
+		    }
+		
+		function convertSalesData(data){
+        	var that = this;
+            data.status_cd_name = Offer_Type[data.status_cd];
+            data.create_date_str = that.formatDateStr(data.create_date);
+            data.eff_date_str = that.formatDateStr(data.eff_date);
+            data.exp_date_str = that.formatDateStr(data.exp_date);
+        }
+        function formatDateStr(date){
+            return fish.dateutil.displayDate(date, 'yyyy-mm-dd hh:mm:ss','yyyy-mm-dd');
+        }
+	
+	
+</script>
+
+</html>

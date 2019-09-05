@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" language="javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/underscore.js"></script>
+<script src="js/echarts.min.js"></script>
+
+
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/animatecss/animate.min.css">
+    <link rel="stylesheet" href="fonticon/iconfont.css">
+    <!-- <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-bss-web.css">
+    <link rel="stylesheet" href="template/default/portal/css/portal-bss-web.css">
+    <link rel="stylesheet" href="template/default/ppm/css/ppm-bss-web.css"> -->
+    <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-gs-bss.css">
+    <link rel="stylesheet" href="frm/fish-desktop/template/css/template.css">
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/icheck/icheck.css">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/html5shiv.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/respond.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="frm/dot.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-all.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/locale/fish-desktop-locale.zh.min.js"></script>
+	<script type="text/javascript" src="frm/fish-desktop/third-party/splitter/fish.splitter.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/icheck/fish.icheck.js"></script>
+    <!-- <script type="text/javascript" src="frm/fish-bss-ext.js"></script> -->
+    <script type="text/javascript" src="frm/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="frm/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="frm/xtable.js"></script>
+    <script type="text/javascript" src="frm/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="frm/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="frm/FileSaver.js"></script>
+    <script type="text/javascript" src="frm/ext/console-fix.js"></script>
+    <script type="text/javascript" src="frm/ext/tree-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/grid-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/label-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/fixedbox.js"></script>
+    <script type="text/javascript" src="frm/ext/pagination-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tooltip-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/popup-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tab-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/formlist.js"></script>
+    <script type="text/javascript" src="frm/ext/hypermultiselect.js"></script>
+    <script type="text/javascript" src="frm/ext/hypercombotree.js"></script>
+    <script type="text/javascript" src="frm/ext/alert-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/combobox-ext.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="public/common/pdfjs-dist/build/pdf.js"></script>
+    <script type="text/javascript" src="public/common/jSignature/jSignature.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-require.js" data-main="main"></script>
+
+
+<title></title>
+</head>
+<body>
+  
+	
+	<!--  start -->
+		
+	<div class="acct-container">
+    <div id="tab_bsn" class="ui-tabs">
+       
+       
+        <div class="ui-tabs-panel none-border" id="queryTab">
+            <div class="panel panel-default margin-vertical">
+				<div class="panel-heading clearfix">
+					<span class="panel-title pull-left padding-right-lg">
+						查询条件
+					</span>
+				</div>
+			
+                <div class="panel-body">
+                <form class="form-horizontal padding-top" id="operBatchBalQueryTab">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <div class="form-group">
+                                <label class="control-label col-xs-4">
+                                    区域:
+                                </label>
+                                <div class="col-xs-8">
+                                    <input class="form-control" id="queryStaffCode" name="queryStaffCode">
+                                </div>
+							</div>
+						</div>
+                        
+                        
+                        <div class="col-xs-4">
+                             <div class="form-group">
+                                <label class="control-label col-xs-4">
+                                    欺诈场景:
+                                </label>
+                                <div class="col-xs-8">
+                                    <input class="form-control" id="queryStaffCode" name="queryStaffCode">
+                                </div>
+							</div>
+                        </div>
+						
+						
+					
+                 
+                    </div>
+					
+					<div class="row">
+						<div class="col-xs-9">
+							
+							<div class="row">
+						<div class="col-xs-6">
+							
+                            <div class="form-group">
+                                <label class="control-label col-xs-3">
+                                    确认状态:
+                                </label>
+                                <div class="col-xs-2">
+                                    <input type="checkbox" id="queryStaffCode" name="queryStaffCode1">
+									未确认
+								</div>
+								<div class="col-xs-2">
+									<input type="checkbox" id="queryStaffCode" name="queryStaffCode2">
+									确认欺诈
+								</div>
+								<div class="col-xs-2">
+									<input type="checkbox" id="queryStaffCode" name="queryStaffCode3">
+									确认正常
+								</div>
+                            </div>
+						</div>
+						</div>
+						</div>
+						
+					<div class="col-xs-3">
+                            <div class="form-group">
+                                <div class="col-xs-9 col-xs-offset-3">
+                                    <button type="button" class="btn btn-primary" id="btn_incomeQuery">
+                                        <span class="glyphicon glyphicon-search padding-right-sm"></span>
+    								查 询
+                                    </button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+					
+					
+					</div>
+					
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <div class="panel panel-default" id="panel1">
+        <div class="panel-heading clearfix">
+            <span class="panel-title pull-left padding-right-lg">
+                查询结果
+            </span>
+			
+			<span class="panel-title pull-right padding-right-lg">
+                报表展示:
+				<input type="radio" name="reportShow" value="0">
+				趋势图
+				<input type="radio" name="reportShow"  value="1">
+				柱状图
+				<input type="radio" name="reportShow"  value="2">
+				确认趋势图
+            </span>
+        </div>
+        <div class="panel-body acct-pad-0 acct-relativedom">
+             <div class="content-chart1" style="width: 600px;height:400px;margin-left:300px;"></div>
+            <div class="content-chart2" style="width: 600px;height:400px;margin-left:300px;display:none"></div>
+            <div class="content-chart3" style="width: 600px;height:400px;margin-left:300px;display:none"></div>
+        </div>
+    </div>
+   
+   
+    </div>
+</div>
+	
+
+	
+	<!-- end -->
+	
+	
+</body>
+<script>
+    $(function(){
+        var data=[{name:'carl'},{name:'carl'},{name:'carl'}];
+        var t=_.template($("#tpl").text());
+        $("#container").html(t(data));
+		
+		
+		//初始化组件
+		init();
+		
+    });
+	
+	function init(){
+		initChart1();
+		initChart2();
+		initChart3();
+	}
+	
+	function initChart1(){
+			var title = '欺诈监控分析每日告警图(2018-10)';
+			var legend = ['未确认','确认欺诈','确认正常'];
+			var xAxis = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'];
+			var series1 = [120, 132, 101, 134, 90, 230, 210, 134, 90, 230, 210, 134, 90, 230, 210,120, 132, 101, 134, 90, 230, 210, 134, 90, 230, 210, 134, 90, 230, 210,10];
+			var series2 = [10, 132, 101, 134, 90, 230, 110, 134, 90, 230, 210, 134, 90, 230, 210,120, 132, 101, 134, 90, 230, 210, 134, 90, 230, 210, 134, 90, 230, 210,10];
+			var series3 = [50, 132, 101, 134, 90, 230, 210, 134, 90, 230, 210, 134, 90, 230, 210,120, 132, 101, 134, 90, 230, 210, 134, 90, 230, 210, 134, 90, 230, 210,10];
+			 series1 = [];
+			 series2 = [];
+			 series3 = [];
+			
+			var Chart1 = echarts.init($('.content-chart1')[0]);
+			var option1 = {
+				title: {
+					text: title
+				},
+				tooltip: {
+					trigger: 'axis'
+				},
+				legend: {
+					data:legend
+				},
+				grid: {
+					left: '3%',
+					right: '4%',
+					bottom: '3%',
+					containLabel: true
+				},
+				toolbox: {
+					feature: {
+						saveAsImage: {}
+					}
+				},
+				xAxis: {
+					type: 'category',
+					boundaryGap: false,//让折线图从X轴0刻度开始
+					data: xAxis
+				},
+				yAxis: {
+					type: 'value'
+				},
+				series: [
+					{
+						name:legend[0],
+						type:'line',
+						//smooth:0.3, //折线图的弧度
+						//symbol: 'none',
+						//stack: '总量',  //累积总量显示 
+						data:series1
+					},
+					{
+						name:legend[1],
+						type:'line',
+						//smooth:0.3, //折线图的弧度
+						//symbol: 'none',  //去掉小圆点
+						//stack: '总量',
+						data:series2
+					},
+					{
+						name:legend[2],
+						type:'line',
+						//smooth:0.3, //折线图的弧度
+						//symbol: 'none',
+						//stack: '总量',
+						data:series3
+					}
+				]
+			};
+
+			Chart1.setOption(option1);
+                
+        }
+		
+		function initChart2(){
+			var Chart2 = echarts.init($('.content-chart2')[0]);
+            var option2 = {
+				title: {
+				   // text: '折线图堆叠'
+					text: '欺诈监控分析每日告警图(2018-10)'
+				},
+				tooltip : {
+					trigger: 'axis',
+					axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+						type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+					}
+				},
+				legend: {
+					data:['未确认','确认欺诈','确认正常']
+				},
+				grid: {
+					left: '3%',
+					right: '4%',
+					bottom: '3%',
+					containLabel: true
+				},
+				xAxis : [
+					{
+						type : 'category',
+						data : ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
+					}
+				],
+				yAxis : [
+					{
+						type : 'value'
+					}
+				],
+				series : [
+					{
+						name:'未确认',
+						type:'bar',
+						data:[120, 132, 101, 134, 90, 230, 210, 134, 90, 230, 210, 134, 90, 230, 210,120, 132, 101, 134, 90, 230, 210, 134, 90, 230, 210, 134, 90, 230, 210,10]
+					},
+					{
+						name:'确认欺诈',
+						type:'bar',
+						//stack: '广告',
+						data:[40, 132, 101, 134, 90, 230, 210, 134, 90, 230, 210, 134, 90, 230, 210,120, 132, 101, 134, 90, 230, 210, 134, 90, 230, 210, 134, 90, 230, 210,10]
+					},
+					{
+						name:'确认正常',
+						type:'bar',
+						//stack: '广告',
+						data:[20, 132, 101, 134, 90, 230, 210, 134, 90, 230, 210, 134, 90, 230, 210,120, 132, 101, 134, 90, 230, 210, 134, 90, 230, 210, 134, 90, 230, 210,10]
+					}
+				]
+			};
+			Chart2.setOption(option2);
+                
+           
+		}
+	
+	
+</script>
+
+</html>

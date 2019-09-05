@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" language="javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/underscore.js"></script>
+
+
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/animatecss/animate.min.css">
+    <link rel="stylesheet" href="fonticon/iconfont.css">
+    <!-- <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-bss-web.css">
+    <link rel="stylesheet" href="template/default/portal/css/portal-bss-web.css">
+    <link rel="stylesheet" href="template/default/ppm/css/ppm-bss-web.css"> -->
+    <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-gs-bss.css">
+    <link rel="stylesheet" href="frm/fish-desktop/template/css/template.css">
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/icheck/icheck.css">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/html5shiv.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/respond.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="frm/dot.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-all.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/locale/fish-desktop-locale.zh.min.js"></script>
+	<script type="text/javascript" src="frm/fish-desktop/third-party/splitter/fish.splitter.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/icheck/fish.icheck.js"></script>
+    <!-- <script type="text/javascript" src="frm/fish-bss-ext.js"></script> -->
+    <script type="text/javascript" src="frm/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="frm/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="frm/xtable.js"></script>
+    <script type="text/javascript" src="frm/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="frm/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="frm/FileSaver.js"></script>
+    <script type="text/javascript" src="frm/ext/console-fix.js"></script>
+    <script type="text/javascript" src="frm/ext/tree-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/grid-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/label-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/fixedbox.js"></script>
+    <script type="text/javascript" src="frm/ext/pagination-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tooltip-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/popup-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tab-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/formlist.js"></script>
+    <script type="text/javascript" src="frm/ext/hypermultiselect.js"></script>
+    <script type="text/javascript" src="frm/ext/hypercombotree.js"></script>
+    <script type="text/javascript" src="frm/ext/alert-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/combobox-ext.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="public/common/pdfjs-dist/build/pdf.js"></script>
+    <script type="text/javascript" src="public/common/jSignature/jSignature.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-require.js" data-main="main"></script>
+
+	<script type="text/javascript" src="./consts/CommonStaticData.js"></script>
+	
+
+<title></title>
+</head>
+<body>
+
+	
+	<!--  start -->
+	
+	
+
+<div id="grid02"></div>
+    <div style="padding-top:5px;">
+        <button class="btn btn-default" type="button" id="addTreeNode">新增节点</button>
+        <button class="btn btn-default" type="button" id="delTreeNode">删除节点</button>
+        <button class="btn btn-default" type="button" id="modTreeNode">修改节点</button>
+        <button class="btn btn-default" type="button" id="expandNode">展开节点</button>
+        <button class="btn btn-default" type="button" id="expandAll">展开所有节点</button>
+        <button class="btn btn-default" type="button" id="collapseNode">收缩节点</button>
+        <button class="btn btn-default" type="button" id="getRootData">获取根节点</button>
+        <button class="btn btn-default" type="button" id="getNodeChildren">获取节点的子节点</button>
+        <button class="btn btn-default" type="button" id="getNodeChildrenCascade">获取节点的所有子节点</button>
+        <button class="btn btn-default" type="button" id="getNodeParent">获取节点的父节点</button>
+        <button class="btn btn-default" type="button" id="getNodeParentCascade">获取节点的所有父节点</button>
+        <button class="btn btn-default" type="button" id="getNodeLevel">获取节点的级别</button>
+        <button class="btn btn-default" type="button" id="getNodeData">获取节点的所有子节点(子节点数据在父节点children属性中)</button>
+        <button class="btn btn-default" type="button" id="isNodeVisible">节点是否可见</button>
+        <button class="btn btn-default" type="button" id="getPrevRow">获取同级的前一条数据</button>
+        <button class="btn btn-default" type="button" id="getNextRow">获取同级的后一条数据</button>
+        <button class="btn btn-default" type="button" id="exchangeRow">交换两个节点</button>
+        <button type="button" class="btn btn-default" id="btnReloadData">重新加载数据</button>
+    </div>
+	
+	
+	<!-- end -->
+	
+	
+</body>
+<script>
+    $(function(){
+        var data=[{name:'carl'},{name:'carl'},{name:'carl'}];
+        var t=_.template($("#tpl").text());
+        $("#container").html(t(data));
+
+		//初始化组件
+		init();
+    });
+	
+	function init(){
+	
+var mydata2 = [
+    {id:"2",invdate:"2010-05-25",name:"test2",note:"叶子节点",tax:"20.00",total:"320.00"},
+    {id:"3",invdate:"2007-09-01",name:"test3",note:"懒加载示例",tax:"30.00",total:"430.00",children:[]},
+    {id:"4",invdate:"2007-10-04",name:"test4",note:"note",tax:"10.00",total:"210.00",
+        children:[
+            {id:"5",invdate:"2007-10-05",name:"test5",note:"note2",tax:"20.00",total:"320.00"},
+            {id:"6",invdate:"2007-09-06",name:"test6",note:"note3",tax:"30.00",total:"430.00"}
+        ]
+    },
+    {id:"7",invdate:"2007-10-04",name:"test7",note:"懒加载示例",tax:"10.00",total:"210.00",loaded:false,children:[]},
+    {id:"8",invdate:"2007-10-03",name:"test8",note:"note2",amount:"300.00",tax:"21.00",total:"320.00",
+        children:[
+            {id:"9",invdate:"2007-09-01",name:"test9",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"},
+            {id:"11",invdate:"2007-10-01",name:"test11",note:"note",amount:"200.00",tax:"10.00",total:"210.00"}
+        ]
+    }
+];
+
+$("#grid02").grid({
+    data: mydata2,
+    height: 260,
+    colModel:[
+        {
+            name:'id',
+            key:true,
+            hidden:true
+        },
+        {
+            name:'name',
+            editable:true
+        },
+        {
+            name:'invdate',
+            editable:true,
+            formatter:"date",
+            formatoptions:{
+                newformat: 'yyyy-mm-dd' //格式化后的数据格式
+            }
+        },
+        {
+            name:'amount',
+            editable:true,
+            formatter:"integer",
+            editrules:"required;integer(nzp)"
+        },
+        {
+            name:'tax',
+            editable:true,
+            formatter:"number",
+            editrules:"required;digits"
+        },
+        {
+            name:'total',
+            editable:true,
+            formatter:"currency",
+            formatoptions:{prefix:"￥"},
+            editrules:"required;match[gte, amount]"
+        },
+        {
+            name:'note',
+            editable:true
+        },
+        {
+            name:'action',
+            formatter:'actions',
+            formatoptions:{
+                editbutton:true, //默认开启编辑功能
+                delbutton:true,  //默认开启删除功能
+                inlineButtonAdd : [{ //可以给actions类型添加多个icon图标,事件自行控制
+                    id: "jLockButton", //每个图标的id规则为id+"_"+rowid
+                    className:"inline-lock",//每个图标的class
+                    icon:"glyphicon glyphicon-lock",//图标的样子
+                    title:"锁定"//鼠标移上去显示的内容
+                },{
+                    id: "jUnLockButton",
+                    className:"inline-unlock",
+                    icon:"fa fa-unlock",//awesome的图标
+                    title:"解锁",
+                    hidden:true //默认隐藏
+                }]
+            }
+        }
+    ],
+    expandColumn:"name",
+    treeGrid:true,
+    onRowExpand:function(e, rowData){//展开父节点rowData
+        console.log(rowData);
+        var children = $("#grid02").grid("getNodeChildren", rowData);
+        if(children.length==0){
+            var dataArr = [];
+            var obj = {};
+            obj.id = $.jgrid.randId();
+            obj.name = rowData.name+"-child1";
+            obj.isLeaf=false;
+            dataArr.push(obj);
+            obj = {};
+            obj.id = $.jgrid.randId();
+            obj.name = rowData.name+"-child2";
+			obj.invdate = rowData.invdate;
+            dataArr.push(obj);
+            $("#grid02").grid('addChildNodes', dataArr, rowData);
+        }
+    },
+    toolbar: [true,"bottom"],
+    treeIconFunction : function (rowdata) {
+        if (rowdata.isLeaf) {
+            return {
+                leaf: ''
+            }
+        }
+    }
+});
+
+$("#grid02").grid("navButtonAdd",[
+    {
+        title:"新增",
+        id:"grid02_addIcon",
+        buttonicon:"glyphicon glyphicon-plus",
+        navpos:"bottombar",
+        onClick:function(){
+            var selected = $("#grid02").grid("getSelection");
+            $("#grid02").grid('addRow',{
+                parent : selected,
+                initdata:{
+                    id:$.jgrid.randId(),
+                    note:"新加的"
+                }
+            });
+
+            // $("#grid02").grid('addChildNode', initdata,selected);
+        }
+    }
+]);
+
+		
+	}
+	
+	
+	
+</script>
+
+</html>

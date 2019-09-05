@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" language="javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/underscore.js"></script>
+
+
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/animatecss/animate.min.css">
+    <link rel="stylesheet" href="fonticon/iconfont.css">
+    <!-- <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-bss-web.css">
+    <link rel="stylesheet" href="template/default/portal/css/portal-bss-web.css">
+    <link rel="stylesheet" href="template/default/ppm/css/ppm-bss-web.css"> -->
+    <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-gs-bss.css">
+    <link rel="stylesheet" href="frm/fish-desktop/template/css/template.css">
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/icheck/icheck.css">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/html5shiv.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/respond.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="frm/dot.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-all.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/locale/fish-desktop-locale.zh.min.js"></script>
+	<script type="text/javascript" src="frm/fish-desktop/third-party/splitter/fish.splitter.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/icheck/fish.icheck.js"></script>
+    <!-- <script type="text/javascript" src="frm/fish-bss-ext.js"></script> -->
+    <script type="text/javascript" src="frm/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="frm/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="frm/xtable.js"></script>
+    <script type="text/javascript" src="frm/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="frm/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="frm/FileSaver.js"></script>
+    <script type="text/javascript" src="frm/ext/console-fix.js"></script>
+    <script type="text/javascript" src="frm/ext/tree-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/grid-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/label-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/fixedbox.js"></script>
+    <script type="text/javascript" src="frm/ext/pagination-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tooltip-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/popup-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tab-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/formlist.js"></script>
+    <script type="text/javascript" src="frm/ext/hypermultiselect.js"></script>
+    <script type="text/javascript" src="frm/ext/hypercombotree.js"></script>
+    <script type="text/javascript" src="frm/ext/alert-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/combobox-ext.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="public/common/pdfjs-dist/build/pdf.js"></script>
+    <script type="text/javascript" src="public/common/jSignature/jSignature.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-require.js" data-main="main"></script>
+
+
+<title></title>
+</head>
+<body>
+
+	
+	<!--  start -->
+ <div id="horizontal" class="ui-splitter">
+        <div class="ui-pane ui-scrollable" id="splitter_left">
+            <div class="panel panel-default none-border">
+                <div class="panel-heading clearfix">
+                    <span class="panel-title pull-left padding-right-lg">
+                        违约金比率列表
+                    </span>
+                    <div class="form-inline pull-right">
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="button" id="btn_add">
+                                <span class="glyphicon glyphicon-plus padding-right-sm"></span>
+                                添 加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div id="lateFeeRateGrid" class="none-border acct-mt--1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-pane ui-scrollable" id="splliter_right" style="overflow: hidden;">
+            <div class="panel panel-default none-border">
+                <div class="panel-heading clearfix">
+                    <span class="panel-title pull-left padding-right-lg">
+                         违约金比率信息
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal padding" id="lateFeeRateForm">
+                        <div class="row">
+                            <div class="col-xs-11">
+                                <!--<div class="form-group">
+                                    <label class="control-label col-xs-4">
+                                        管理区域:
+                                    </label>
+                                    <div class="col-xs-8">
+                                       <div class="input-group">
+                                            <input class="form-control" id="region" name="region" data-rule="required">
+                                        </div>
+                                    </div>
+                                </div>
+-->
+                                <div class="form-group">
+                                    <label class="control-label col-xs-4">
+                                        管理区域:
+                                    </label>
+                                    <div class="col-xs-8">
+                                        <input class="form-control" id="region" name="region" data-rule="required"  maxLength="50" >
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-11">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-4">
+                                        帐目类型:
+                                    </label>
+                                    <div class="col-xs-8">
+                                        <div class="input-group">
+                                            <input class="form-control" id="acctItemType" name="acctItemType" data-rule="required">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-11">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-4">
+                                        违约金比率:
+                                    </label>
+                                    <div class="col-xs-7">
+                                        <input class="form-control" disabled="true" id="lateFeeRate" name="lateFeeRate" data-rule="required">
+                                        <input type='hidden' id="lateFeeRateId" value="0">
+                                    </div>
+                                    <div class="col-xs-1">
+                                    ‰
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <div class="col-xs-offset-5 col-xs-8">
+                                        <input class="btn btn-primary" type="button" id="rateOkBtn" value="确定" disabled="true">
+                                        <input class="btn btn-default" type="button" id="rateCancelBtn" value="重置" disabled="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- end -->
+	
+	
+</body>
+<script>
+    
+$(document).ready(function() {
+
+    
+         function initSplitter() {
+            console.info("---------test--------initSplitter");
+            var me = this;
+            me.$("#horizontal").splitter({
+                panes: [
+                    {collapsible: false, size: "900px"},
+                    {collapsible: false}
+                ]
+            }).css({
+                'height' : $(window).outerHeight() - this.$("#horizontal").offset().top - 8
+            });
+        }
+
+initSplitter() ;
+
+    var options = {
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        fNodes : [
+            { id:1, pId:0, name:"父节点1 - 展开", open:true},
+            { id:11, pId:1, name:"父节点11 - 折叠"},
+            { id:111, pId:11, name:"叶子节点111"},
+            { id:112, pId:11, name:"叶子节点112"},
+            { id:113, pId:11, name:"叶子节点113"},
+            { id:114, pId:11, name:"叶子节点114"},
+            { id:12, pId:1, name:"父节点12 - 折叠"},
+            { id:121, pId:12, name:"叶子节点121"},
+            { id:122, pId:12, name:"叶子节点122"},
+            { id:123, pId:12, name:"叶子节点123"},
+            { id:124, pId:12, name:"叶子节点124"},
+            { id:13, pId:1, name:"父节点13 - 没有子节点", isParent:true},
+            { id:2, pId:0, name:"父节点2 - 折叠"},
+            { id:21, pId:2, name:"父节点21 - 展开", open:true},
+            { id:211, pId:21, name:"叶子节点211"},
+            { id:212, pId:21, name:"叶子节点212"},
+            { id:213, pId:21, name:"叶子节点213"},
+            { id:214, pId:21, name:"叶子节点214"},
+            { id:22, pId:2, name:"父节点22 - 折叠"},
+            { id:221, pId:22, name:"叶子节点221"},
+            { id:222, pId:22, name:"叶子节点222"},
+            { id:223, pId:22, name:"叶子节点223"},
+            { id:224, pId:22, name:"叶子节点224"},
+            { id:23, pId:2, name:"父节点23 - 折叠"},
+            { id:231, pId:23, name:"叶子节点231"},
+            { id:232, pId:23, name:"叶子节点232"},
+            { id:233, pId:23, name:"叶子节点233"},
+            { id:234, pId:23, name:"叶子节点234"},
+            { id:3, pId:0, name:"父节点3 - 没有子节点", isParent:true}
+        ]
+    };
+    var $tree = $("#treeDemo").tree(options);
+
+
+
+
+    var opt = {
+        data: [
+            {id:"1",invdate:"2010-05-24",name:"测试很长很长很长很长很长很长很长很长很长很长很长很长很长很长的文字",note:"note",tax:"10.00",total:"2111.00"} ,
+            {id:"2",invdate:"2010-05-25",name:"test2",note:"note2",tax:"20.00",total:"320.00",extra:"tyl"},
+            {id:"3",invdate:"2007-09-01",name:"test3",note:"note3",tax:"30.00",total:"430.00"},
+            {id:"4",invdate:"2007-10-04",name:"test",note:"note",tax:"10.00",total:"210.00"},
+            {id:"29",invdate:"2007-09-01",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"}
+        ],
+        colModel: [
+            {name: 'id',index: 'id',sorttype: "int",label: 'Inv No'},
+            {name: 'invdate',label: 'Date',index: 'invdate',width: 90,sorttype: "date",formatter: "date"},
+            {name: 'name',label: 'Client',index: 'name',width: 100},
+            {name: 'amount',label: 'Amount',index: 'amount',width: 80,align: "right",sorttype: "float",formatter: "number"},
+            {name: 'tax',label: 'Tax',index: 'tax',width: 80,align: "right",sorttype: "float"},
+            {name: 'total',label: 'Total',index: 'total',width: 80,align: "right",sorttype: "float"},
+            {name: 'note',label: 'Notes',index: 'note',width: 100,sortable: false}
+        ]
+    };
+    $("#gridId").grid(opt);
+});
+	
+</script>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" language="javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/underscore.js"></script>
+
+
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/animatecss/animate.min.css">
+    <link rel="stylesheet" href="fonticon/iconfont.css">
+    <!-- <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-bss-web.css">
+    <link rel="stylesheet" href="template/default/portal/css/portal-bss-web.css">
+    <link rel="stylesheet" href="template/default/ppm/css/ppm-bss-web.css"> -->
+    <link rel="stylesheet" href="frm/fish-desktop/css/fish-desktop-gs-bss.css">
+    <link rel="stylesheet" href="frm/fish-desktop/template/css/template.css">
+    <link rel="stylesheet" href="frm/fish-desktop/third-party/icheck/icheck.css">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/html5shiv.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/libs/bootstrap/respond.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="frm/dot.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-all.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/locale/fish-desktop-locale.zh.min.js"></script>
+	<script type="text/javascript" src="frm/fish-desktop/third-party/splitter/fish.splitter.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/icheck/fish.icheck.js"></script>
+    <!-- <script type="text/javascript" src="frm/fish-bss-ext.js"></script> -->
+    <script type="text/javascript" src="frm/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="frm/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="frm/xtable.js"></script>
+    <script type="text/javascript" src="frm/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="frm/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="frm/FileSaver.js"></script>
+    <script type="text/javascript" src="frm/ext/console-fix.js"></script>
+    <script type="text/javascript" src="frm/ext/tree-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/grid-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/label-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/fixedbox.js"></script>
+    <script type="text/javascript" src="frm/ext/pagination-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tooltip-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/popup-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/tab-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/formlist.js"></script>
+    <script type="text/javascript" src="frm/ext/hypermultiselect.js"></script>
+    <script type="text/javascript" src="frm/ext/hypercombotree.js"></script>
+    <script type="text/javascript" src="frm/ext/alert-ext.js"></script>
+    <script type="text/javascript" src="frm/ext/combobox-ext.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/third-party/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="public/common/pdfjs-dist/build/pdf.js"></script>
+    <script type="text/javascript" src="public/common/jSignature/jSignature.min.js"></script>
+    <script type="text/javascript" src="frm/fish-desktop/js/fish-desktop-require.js" data-main="main"></script>
+
+	<script type="text/javascript" src="./consts/CommonStaticData.js"></script>
+	
+
+<title></title>
+</head>
+<body>
+
+	
+	<!--  start -->
+	
+	
+
+<div id="grid02"></div>
+
+	
+	
+	<!-- end -->
+	
+	
+</body>
+<script>
+    $(function(){
+        var data=[{name:'carl'},{name:'carl'},{name:'carl'}];
+        var t=_.template($("#tpl").text());
+        $("#container").html(t(data));
+
+		//初始化组件->···前台分页方法  （后台一次性查询所有，前端获取后分页方法）
+		init();
+    });
+	
+	function init(){
+	
+		//1.数据模型
+		var pageNo = 1;//默认当前页号
+		var pageSize = 15;//默认每页条数
+		
+		//所有的数据
+		var mydata2 = [
+			{id:"2",invdate:"2010-05-25",name:"test2",note:"叶子节点",tax:"20.00",total:"320.00"},
+			{id:"3",invdate:"2007-09-01",name:"test3",note:"懒加载示例",tax:"30.00",total:"430.00",children:[]},
+			{id:"4",invdate:"2007-10-04",name:"test",note:"note",tax:"10.00",total:"210.00",
+				children:[
+					{id:"5",invdate:"2007-10-05",name:"test2",note:"note2",tax:"20.00",total:"320.00"},
+					{id:"6",invdate:"2007-09-06",name:"test3",note:"note3",tax:"30.00",total:"430.00"}
+				]
+			},
+			{id:"7",invdate:"2007-10-04",name:"test",note:"懒加载示例",tax:"10.00",total:"210.00",loaded:false,children:[]},
+			{id:"8",invdate:"2007-10-03",name:"test2",note:"note2",amount:"300.00",tax:"21.00",total:"320.00",
+				children:[
+					{id:"9",invdate:"2007-09-01",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"},
+					{id:"11",invdate:"2007-10-01",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"}
+				]
+			}
+		];
+		
+		var sumCount = mydata2.length;//总共条数
+		var pageNum = sumCount % pageSize == 0? sumCount / pageSize:sumCount / pageSize + 1; //总页数
+		
+
+		//分页数据模型组装
+		/**
+		page  当前页
+		pageNum 总页数
+		*/
+		var getPerData = function(page,pageNum) {//点击分页的回调方法
+			var perData = [];
+			if(page == 1 ){//显示前3个根节点
+				perData = $.extend(true, [], mydata2.slice(0,pageNum + 1));
+			}else{
+				perData = $.extend(true, [], mydata2.slice(pageNum + 1));
+			}
+			return {
+				"rows": perData,//当前页要显示的数据
+				"page": page,//当前页
+				"total": pageNum //总页数
+			};
+		}
+
+		//初始化树表格组件
+		$("#grid02").grid({
+			data: getPerData(1),
+			//data:{"rows": perData,"page": page,"total": 2},
+			height: 260,
+			colModel:[
+				{name:'id',sorttype:"int",key:true},
+				{name:'invdate', width:90, sorttype:"date", formatter:"date"},
+				{name:'name', width:100},
+				{name:'amount', width:80, align:"right",sorttype:"float", formatter:"number"},
+				{name:'tax',  width:80, align:"right",sorttype:"float"},
+				{name:'total', width:80,align:"right",sorttype:"float"},
+				{name:'note', width:100, sortable:false}
+			],
+			datatype : "json",
+			expandColumn:"id",
+			treeGrid:true,
+			onRowExpand:function(e, rowData){//展开父节点rowData
+				console.log(rowData);
+				var children = $("#grid02").grid("getNodeChildren", rowData);
+				/*if(children.length==0){
+					console.log("没有子节点则进行懒加载,这里可以自行控制,可以每次都加载或者只加载一次");
+					var dataArr = [];
+					var obj = {};
+					obj.id = $.jgrid.randId();
+					obj.name = rowData.name+"-child1";
+					obj.children=[];
+					dataArr.push(obj);
+					obj = {};
+					obj.id = $.jgrid.randId();
+					obj.name = rowData.name+"-child2";
+					dataArr.push(obj);
+					$("#grid02").grid('addChildNodes', dataArr, rowData);
+				}*/
+			},
+			pager: true,
+			pageData: getPerData,
+			rowNum: 10,
+			rowList: [5,10,20]
+		});
+		
+		//添加节点方法
+
+		$("#addTreeNodes").click(function() {
+			var rowData = $("#grid02").grid('getSelection');
+			//这里的数据格式要跟初始化数据的格式一致,统一带children层次结构或者含有parent属性的线性数据
+			var obj = {id:"4444",invdate:"2007-10-04",name:"test",note:"note",tax:"10.00",total:"210.00",expanded:true,
+					children:[
+						{id:"55",invdate:"2007-10-05",name:"test2",note:"note2",tax:"20.00",total:"320.00"},
+						{id:"66",invdate:"2007-09-06",name:"test3",note:"note3",tax:"30.00",total:"430.00"}
+					]
+				};
+			$("#grid02").grid('addChildNodes', obj, rowData);
+
+		});
+	
+	}
+</script>
+
+</html>
